@@ -2,13 +2,13 @@
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-// Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem('theme') || 'light';
+// Check for saved theme preference or default to 'dark' (sophisticated theme)
+const currentTheme = localStorage.getItem('theme') || 'dark';
 htmlElement.setAttribute('data-theme', currentTheme);
 
 themeToggle.addEventListener('click', () => {
     const theme = htmlElement.getAttribute('data-theme');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
 
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);

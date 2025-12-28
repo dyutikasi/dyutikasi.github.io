@@ -1,0 +1,234 @@
+/* ===== Poetry Page Specific Styles ===== */
+
+/* Disable text selection for poetry protection */
+.poem-content {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+/* Prevent right-click context menu on poems */
+.poem-card {
+    -webkit-touch-callout: none;
+}
+
+/* Poetry Hero Section */
+.poetry-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.poetry-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+}
+
+.poetry-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.copyright-notice {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 1rem 2rem;
+    background-color: var(--bg-card);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+/* Poetry Collection */
+.poetry-collection {
+    padding: 80px 20px;
+    background-color: var(--bg-primary);
+}
+
+/* Individual Poem Cards */
+.poem-card {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+}
+
+.poem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+    border-color: var(--primary-color);
+}
+
+/* Poem Header */
+.poem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.poem-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.poem-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Poem Content with Watermark */
+.poem-content {
+    position: relative;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* Visible Watermark */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    opacity: 0.08;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 1;
+    letter-spacing: 4px;
+}
+
+/* Poem Text */
+.poem-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--text-primary);
+    font-family: Georgia, 'Times New Roman', serif;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    white-space: pre-line;
+}
+
+/* Poem Footer */
+.poem-footer {
+    text-align: right;
+}
+
+.poem-copyright {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Back Section */
+.back-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--bg-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .poetry-title {
+        font-size: 2.5rem;
+    }
+
+    .poetry-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .poem-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .poem-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .poem-title {
+        font-size: 1.5rem;
+    }
+
+    .poem-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .watermark {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .poetry-title {
+        font-size: 2rem;
+    }
+
+    .poem-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .poem-content {
+        padding: 1.5rem;
+    }
+
+    .poem-text {
+        font-size: 1rem;
+    }
+}
+
+/* Additional Protection: Prevent printing without watermark */
+@media print {
+    .watermark {
+        opacity: 0.3 !important;
+        font-size: 4rem !important;
+    }
+
+    .poem-copyright {
+        font-size: 1rem !important;
+        color: #000 !important;
+    }
+}
+
+/* Prevent drag-and-drop of poem content */
+.poem-content img,
+.poem-content p {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
