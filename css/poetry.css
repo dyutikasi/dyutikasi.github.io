@@ -75,8 +75,8 @@
 }
 
 .poem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-gold);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--shadow-glow);
     border-color: var(--primary-color);
 }
 
@@ -120,8 +120,11 @@
     transform: translate(-50%, -50%) rotate(-45deg);
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary-color);
-    opacity: 0.08;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.12;
     pointer-events: none;
     white-space: nowrap;
     z-index: 1;
